@@ -31,13 +31,8 @@
      
      <script type="text/javascript">
          function Ingresar() {
-            var parametros = {
-              "email" : document.getElementById("email").value,
-              "password" : document.getElementById("password").value
-              };
             $.ajax({
-                    data:  parametros,
-                    url:   'http://52.41.239.0:8080/?Service=LOGIN&Step=000',
+                    url:   'http://52.41.239.0:8080/?Service=LOGIN&Step=000&email=' + document.getElementById("email").value + "&password=" + document.getElementById("password").value,
                     type:  'post',                    
                     success:  function (response) {
                         if (response.trim()==="1") {
