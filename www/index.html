@@ -31,9 +31,15 @@
      
      <script type="text/javascript">
          function Ingresar() {
+            var parametros = {
+              "email" : document.getElementById("email").value,
+              "password" : document.getElementById("password").value
+              };
             $.ajax({
-                    url:   'http://52.41.239.0:8080/?Service=LOGIN&Step=000&email=' + document.getElementById("email").value + "&password=" + document.getElementById("password").value,
-                    type:  'post',                    
+                    data:  parametros,
+                    url:   'http://52.41.239.0:8080/?Service=LOGIN&Step=000',
+                    type:  'post',          
+                    crossDomain: true,
                     success:  function (response) {
                         if (response.trim()==="1") {
                             window.location.href="vista-dashboard.html";
