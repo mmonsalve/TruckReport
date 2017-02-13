@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Truck Report">
+    <meta name="author" content="NovusLab">
+
+    <title>Truck Report</title>
+
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+     <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
+
+
+
+     <!-- Font Awesome -->
+     <script src="https://use.fontawesome.com/228e06e9e9.js"></script>
+     
+     
+     <script type="text/javascript">
+         function Ingresar() {
+            var parametros = {
+              "email" : document.getElementById("email").value,
+              "password" : document.getElementById("password").value
+              };
+            $.ajax({
+                    data:  parametros,
+                    url:   'http://52.41.239.0:8080/?Service=LOGIN&Step=000',
+                    type:  'post',                    
+                    success:  function (response) {
+                        if (response.trim()==="1") {
+                            window.location.href="vista-dashboard.html";
+                        } else {
+                            alert("usuario o password incorrecto");
+                        }
+                    }
+            });
+         }
+     </script>
+
+    <!-- Custom CSS -->
+    <style>
+    body {
+        padding-top: 70px;
+
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+
+    }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-md-offset-5 col-md-3">
+            <div class="form-login">
+            <div id="logo"><img src="images/truck-report-logo-grande.png" alt="Truck Report"></div>
+            <input type="text" id="email" name="email" class="form-control input-sm chat-input" placeholder="EMAIL" />
+            </br>
+            <input type="password" id="password" name="password" class="form-control input-sm chat-input" placeholder="CONTRASEÑA" />
+            </br>
+            <div class="btn-login">
+            <span class="group-btn">     
+                <a href="javascript: Ingresar()" class="btn btn-primary btn-md">INGRESAR</a>
+            </span>
+            </div>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
