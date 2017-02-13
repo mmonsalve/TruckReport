@@ -9,4 +9,7 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <allow-intent href="market:*" />
+    <allow-intent href="*" />
+    <allow-navigation href="*" />    
 </widget>
